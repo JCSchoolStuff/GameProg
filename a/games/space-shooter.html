@@ -1,10 +1,10 @@
 <html>
 
 <head>
-    <title>Game Loop</title>
+    <title>Space Shooter!</title>
     <style>
-        *{
-            margin:0;
+        * {
+            margin: 0;
             overflow: hidden;
         }
     </style>
@@ -14,29 +14,24 @@
     <canvas id="canv">
 
     </canvas>
-    <script src="Vector2.js"></script>
+    <script src="../engine/Vector2.js"></script>
+    <script src="../engine/Input.js"></script>
+    <script src="../engine/Engine.js"></script>
     <script>
-        let canvas = document.querySelector("#canv")
-        let ctx = canvas.getContext("2d")
-
         let position = new Vector2(50, 100)
 
-        function gameLoop(){
-            update()
-            draw()
-            requestAnimationFrame(gameLoop)
+        function update() {
+            if (Input.keysDown.includes("ArrowRight"))
+                position.x += 1
+            if (Input.keysDown.includes("ArrowLeft"))
+                position.x -= 1
+            if (Input.keysDown.includes("ArrowUp"))
+                position.y -= 1
+            if (Input.keysDown.includes("ArrowDown"))
+                position.y += 1
         }
 
-        function update(){
-            position.x += 2
-            position.y += .5
-        }
-
-        function draw() {
-            //expand canvas size
-            canvas.width = window.innerWidth
-            canvas.height = window.innerHeight
-
+        function draw(ctx) {
             //signalling to context that drawing will happen
             ctx.save()
 
@@ -61,7 +56,8 @@
             ctx.restore()
         }
 
-        requestAnimationFrame(gameLoop)
+        Engine.start()
+
     </script>
 </body>
 
