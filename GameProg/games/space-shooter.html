@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Space Shooter!</title>
+    <style>
+        * {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canv">
+
+    </canvas>
+    <script src="../engine/Vector2.js"></script>
+    <script src="../engine/Input.js"></script>
+    <script src="../engine/Engine.js"></script>
+    <script src="../engine/Component.js"></script>
+    <script src="../engine/GameObject.js"></script>
+    <script src="../engine/Scene.js"></script>
+
+    <script src="MainScene.js"></script>
+    <script src="MainGameObject.js"></script>
+    <script src="DrawComponent.js"></script>
+    <script src="UpdateComponent.js"></script>
+
+    <script>
+        //tell the engine what the current scene is
+        Engine.currentScene = new MainScene()
+         //start the game engine
+        Engine.start()
+    </script>
+</body>
+
+</html>
