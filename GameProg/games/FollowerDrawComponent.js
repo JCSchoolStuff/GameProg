@@ -1,6 +1,6 @@
-class DrawComponent extends Component {
+class FollowerDrawComponent extends Component {
     draw(ctx){
-        let position = this.gameObject.transform.position
+        let position = this.gameObject.components[0].position
         //signalling to context that drawing will happen
         ctx.save()
 

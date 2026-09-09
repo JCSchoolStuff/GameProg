@@ -1,8 +1,8 @@
-class UpdateComponent extends Component {
+class FollowerUpdateComponent extends Component {
     position
     
     start(){
-        this.gameObject.transform.position = new Vector2(100,100)
+        this.gameObject.transform.position = new Vector2(50,50)
     }
     update() {
         if (Input.keysDown.includes("ArrowRight"))

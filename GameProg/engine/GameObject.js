@@ -1,6 +1,14 @@
 class GameObject{
     components = []
 
+    get transform(){
+        return this.components[0];
+    }
+
+    constructor(){
+        this.addComponent(new Transform())
+    }
+
     addComponent(component){
         this.components.push(component)
         component.gameObject = this
