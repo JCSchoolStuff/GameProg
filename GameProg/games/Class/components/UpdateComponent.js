@@ -15,8 +15,10 @@ class UpdateComponent extends Component {
         if (Input.keysDown.includes("ArrowDown"))
             this.transform.position.y += 3
 
-        if (this.timeSinceLastLaser > 20){
-            instantiate(new LaserGameObject(), this.transform.position.clone())
+        if (this.timeSinceLastLaser > 10){
+            if (Input.keysDown.includes("Space")){
+                instantiate(new LaserGameObject(), this.transform.position.clone())
+            }
             this.timeSinceLastLaser = 0
         }
     }
