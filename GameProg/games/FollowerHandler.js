@@ -1,11 +1,7 @@
-class UpdateComponent extends Component {
+class FollowerHandler extends Component{
     position
-    
-    start(){
-        this.timeSinceLastLaser = 0
-    }
+
     update() {
-        this.timeSinceLastLaser += 1
         if (Input.keysDown.includes("ArrowRight"))
             this.transform.position.x += 3
         if (Input.keysDown.includes("ArrowLeft"))
@@ -14,10 +10,5 @@ class UpdateComponent extends Component {
             this.transform.position.y -= 3
         if (Input.keysDown.includes("ArrowDown"))
             this.transform.position.y += 3
-
-        if (this.timeSinceLastLaser > 20){
-            instantiate(new LaserGameObject(), this.transform.position.clone())
-            this.timeSinceLastLaser = 0
         }
-    }
 }
