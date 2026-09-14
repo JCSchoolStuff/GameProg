@@ -1,12 +1,14 @@
 class DrawComponent extends Component {
     draw(ctx){
-        let position = this.gameObject.transform.position
+        let position = this.transform.position
         //signalling to context that drawing will happen
         ctx.save()
 
         //tell browser where center of object is
         ctx.translate(position.x, position.y)
 
+        //start a new string of drawing
+        ctx.beginPath()
         ctx.lineTo(0, -30)
         ctx.lineTo(10, 0)
         ctx.lineTo(40, 0)
@@ -17,7 +19,6 @@ class DrawComponent extends Component {
         ctx.lineTo(-15, 20)
         ctx.lineTo(-40, 0)
         ctx.lineTo(-10, 0)
-        ctx.lineTo(0, -30)
 
         ctx.fillStyle = "gold"
         ctx.fill()

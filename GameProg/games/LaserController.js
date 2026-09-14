@@ -1,5 +1,5 @@
 class LaserController extends Component{
     update(){
-        this.gameObject.transform.position.y -= 1
+        this.transform.position.y -= 10
     }
 }
