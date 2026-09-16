@@ -1,6 +1,6 @@
 class StaticGameObject extends GameObject{
     constructor(){
-        super()
+        super("Static")
         this.addComponent(new Polygon(), {fillStyle:"green", points:[
             new Vector2(-20+(Math.random()*10), -30+(Math.random()*10)),
             new Vector2(20+(Math.random()*10), -30+(Math.random()*10)),

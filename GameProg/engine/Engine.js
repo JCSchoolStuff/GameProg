@@ -23,6 +23,10 @@ class Engine {
     static gameLoop() {
         Engine.update()
         Engine.draw()
+
+        Time.update()
+        
+        //call gameloop again when browser asks
         requestAnimationFrame(Engine.gameLoop)
     }
 

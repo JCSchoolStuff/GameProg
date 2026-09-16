@@ -1,11 +1,8 @@
 class LaserGameObject extends GameObject{
     constructor(){
-        super()
+        super("Laser")
         this.addComponent(new LaserController())
-        this.addComponent(new Polygon(), {fillStyle: "red", points:[
-            new Vector2(0,-30),
-            new Vector2(5,-7),
-            new Vector2(-5,-7),
-        ]})
+        this.addComponent(new Polygon(), {fillStyle: "red", points:Assets.triangle})
+        this.transform.scale = new Vector2(.5,.5)
     }
 }
