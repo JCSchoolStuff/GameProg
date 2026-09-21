@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Detective Star</title>
+    <style>
+        * {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canv">
+
+    </canvas>
+    <script src="../../engine/Vector2.js"></script>
+    <script src="../../engine/Input.js"></script>
+    <script src="../../engine/Engine.js"></script>
+    <script src="../../engine/Component.js"></script>
+    <script src="../../engine/GameObject.js"></script>
+    <script src="../../engine/Scene.js"></script>
+    <script src="../../engine/Time.js"></script>
+
+    <script src="../../engine/Components/Transform.js"></script>
+    <script src="../../engine/Components/Polygon.js"></script>
+
+    <script src="./components/UpdateComponent.js"></script>
+    <script src="./components/DialogueHandler.js"></script>
+
+    <script src="./gameObjects/MainGameObject.js"></script>
+    <script src="./gameObjects/GohnGameObject.js"></script>
+    <script src="./gameObjects/EquityGameObject.js"></script>
+    <script src="./gameObjects/HexGameObject.js"></script>
+    <script src="./gameObjects/UlyssesGameObject.js"></script>
+
+    <script src="./scenes/MainScene.js"></script>
+
+    <script src="./Assets.js"></script>
+
+    <script>
+        //tell the engine what the current scene is
+        Engine.currentScene = new MainScene()
+         //start the game engine
+        Engine.start()
+    </script>
+</body>
+
+</html>
