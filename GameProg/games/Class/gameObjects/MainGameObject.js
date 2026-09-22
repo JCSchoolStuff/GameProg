@@ -3,5 +3,6 @@ class MainGameObject extends GameObject{
         super("Main")
         this.addComponent(new UpdateComponent())
         this.addComponent(new Polygon(), {fillStyle:"gold", points:Assets.star})
+        this.addComponent(new Health(), {health:2})
     }
 }
