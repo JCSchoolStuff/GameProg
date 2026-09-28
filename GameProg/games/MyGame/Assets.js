@@ -29,6 +29,33 @@ class Assets{
         new Vector2(-0.868, -0.49656)
     ]
 
+    static circle = [
+        new Vector2(0,-1),
+        new Vector2(0.25895, -0.96589),
+        new Vector2(0.50044, -0.86577),
+        new Vector2(0.70711, -0.70711),
+        new Vector2(0.86503, -0.50172),
+        new Vector2(0.96543, -0.26067),
+        new Vector2(1,0),
+        new Vector2(0.96543, 0.26067),
+        new Vector2(0.86503, 0.50172),
+        new Vector2(0.70711, 0.70711),
+        new Vector2(0.50044, 0.86577),
+        new Vector2(0.25895, 0.96589),
+        new Vector2(0,1),
+        new Vector2(-0.25895, 0.96589),
+        new Vector2(-0.50044, 0.86577),
+        new Vector2(-0.70711, 0.70711),
+        new Vector2(-0.86503, 0.50172),
+        new Vector2(-0.96543, 0.26067),
+        new Vector2(-1,0),
+        new Vector2(-0.96543, -0.26067),
+        new Vector2(-0.86503, -0.50172),
+        new Vector2(-0.70711, -0.70711),
+        new Vector2(-0.50044, -0.86577),
+        new Vector2(-0.25895, -0.96589),
+    ]
+
     static star = [
         new Vector2(0,-1), //1
         new Vector2(0.57998, 0.81463), //3
