@@ -1,6 +1,6 @@
 class TitleTextGameObject extends GameObject{ 
     constructor(){
         super("Title")
-        this.addComponent(new TextLabel(), {text:"Detective Star", fillStyle:"white"})
+        this.addComponent(new TextLabel(), {text:"Detective Star: Murder at Roundington Manor", fillStyle:"white", font:"30px TImes"})
     }
 }

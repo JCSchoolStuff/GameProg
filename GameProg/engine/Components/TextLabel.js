@@ -1,7 +1,7 @@
 class TextLabel extends Component{
     fillStyle = "black"
     text = "[BLANK]"
-
+    font = "10px Arial" //Sizepx Font
     draw(ctx){
         //  let position = this.transform.position
         //signalling to context that drawing will happen
@@ -9,10 +9,12 @@ class TextLabel extends Component{
 
         //tell browser where center of object is
         ctx.translate(this.transform.position.x, this.transform.position.y)
-        //  ctx.scale(this.transform.scale.x,this.transform.scale.y)
-        //  ctx.rotate(this.transform.rotation)
+        ctx.scale(this.transform.scale.x,this.transform.scale.y)
+        ctx.rotate(this.transform.rotation)
 
         ctx.fillStyle = this.fillStyle
+
+        ctx.font = this.font
         //draw text
         ctx.fillText(this.text, 0, 0)
 
