@@ -26,6 +26,7 @@
     <script src="../../engine/Components/Transform.js"></script>
     <script src="../../engine/Components/Polygon.js"></script>
     <script src="../../engine/Components/TextLabel.js"></script>
+    <script src="../../engine/Components/Camera.js"></script>
 
     <script src="./components/UpdateComponent.js"></script>
     <script src="./components/LaserController.js"></script>
@@ -38,7 +39,6 @@
     <script src="./gameObjects/LaserGameObject.js"></script>
     <script src="./gameObjects/StaticGameObject.js"></script>
     <script src="./gameObjects/EnemyGameObject.js"></script>
-    <script src="./gameObjects/BackgroundGameObject.js"></script>
     <script src="./gameObjects/PointsGameObject.js"></script>
     <script src="./gameObjects/LevelControllerGameObject.js"></script>
 
@@ -48,10 +48,11 @@
 
     <script src="./Assets.js"></script>
     <script src="./Globals.js"></script>
+    <script src="./Settings.js"></script>
 
     <script>
         //start the game engine
-        Engine.start(Level01)
+        Engine.start(Level01, Settings)
     </script>
 </body>
 

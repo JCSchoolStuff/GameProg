@@ -22,5 +22,7 @@ class UpdateComponent extends Component {
             }
             this.timeSinceLastLaser = 0
         }
+
+        Camera.main.transform.position = this.transform.position.clone()
     }
 }
