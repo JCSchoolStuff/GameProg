@@ -11,5 +11,6 @@ class UpdateComponent extends Component {
             this.transform.position.y -= Time.deltaTime*this.speed
         if (Input.keysDown.includes("ArrowDown"))
             this.transform.position.y += Time.deltaTime*this.speed
+        Camera.main.transform.position = this.transform.position.clone()
     }
 }

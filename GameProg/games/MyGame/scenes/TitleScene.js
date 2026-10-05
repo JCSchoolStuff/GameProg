@@ -1,9 +1,10 @@
 class TitleScene extends Scene{
     constructor(){
         super()
-        this.instantiate(new TitleBackgroundGameObject(), new Vector2(460,260))
-        this.instantiate(new TitleTextGameObject(), new Vector2(470,100))
-        this.instantiate(new TitleButtonGameObject(), new Vector2(670,300))
+        Globals.investigation = 99
+        this.instantiate(new TitleBackgroundGameObject(), new Vector2(0,-200))
+        this.instantiate(new TitleTextGameObject(), new Vector2(500,100))
+        this.instantiate(new TitleButtonGameObject(), new Vector2(675,200))
         this.instantiate(new LevelControllerGameObject())
     }
 }

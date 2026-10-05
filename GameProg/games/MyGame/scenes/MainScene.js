@@ -2,11 +2,14 @@ class MainScene extends Scene{
     constructor(){
         super()
         Globals.investigation = 0
-        this.instantiate(new GohnGameObject(), new Vector2(600,200))
-        this.instantiate(new EquityGameObject(), new Vector2(300,200))
-        this.instantiate(new HexGameObject(), new Vector2(900,200))
-        this.instantiate(new UlyssesGameObject(), new Vector2(1200,200))
-        this.instantiate(new VictimGameObject(), new Vector2(750,350))
-        this.instantiate(new MainGameObject(), new Vector2(750,500))
+        this.instantiate(new GohnGameObject(), new Vector2(-150,200))
+        this.instantiate(new EquityGameObject(), new Vector2(-450,200))
+        this.instantiate(new HexGameObject(), new Vector2(200,200))
+        this.instantiate(new UlyssesGameObject(), new Vector2(500,200))
+        this.instantiate(new VictimGameObject(), new Vector2(0,-150))
+        //this.instantiate(new MainGameObject(), new Vector2(0,0))
+        this.instantiate(new LevelControllerGameObject(), new Vector2(10,20))
+        this.instantiate(new WallGameObject(), new Vector2(0,500))
+        this.instantiate(new WallGameObject(), new Vector2(0,-400))
     }
 }

@@ -26,6 +26,7 @@
     <script src="../../engine/Components/Transform.js"></script>
     <script src="../../engine/Components/Polygon.js"></script>
     <script src="../../engine/Components/TextLabel.js"></script>
+    <script src="../../engine/Components/Camera.js"></script>
 
     <script src="./components/UpdateComponent.js"></script>
     <script src="./components/DialogueHandler.js"></script>
@@ -44,16 +45,19 @@
     <script src="./gameObjects/TitleTextGameObject.js"></script>
     <script src="./gameObjects/TitleButtonGameObject.js"></script>
     <script src="./gameObjects/LevelControllerGameObject.js"></script>
+    <script src="./gameObjects/WallGameObject.js"></script>
 
     <script src="./scenes/TitleScene.js"></script>
     <script src="./scenes/MainScene.js"></script>
+    <script src="./scenes/GenericScene.js"></script>
 
     <script src="./Assets.js"></script>
     <script src="./Globals.js"></script>
+    <script src="./Settings.js"></script>
 
     <script>
         //start the game engine
-        Engine.start(TitleScene)
+        Engine.start(TitleScene, Settings)
     </script>
 </body>
 
