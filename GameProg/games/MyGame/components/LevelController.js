@@ -5,9 +5,8 @@ class LevelController extends Component{
     }
 
     update(){
-        if(Globals.investigation == 99){
-            let startButton = GameObject.find("TitleButton")
-            if(!startButton){
+        if(Globals.stage == 0){
+            if(Input.keysDown.includes("Space")){
                 //change scene to next level
                 SceneManager.loadScene(MainScene)
             }

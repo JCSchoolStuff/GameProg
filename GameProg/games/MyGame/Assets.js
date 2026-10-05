@@ -63,4 +63,15 @@ class Assets{
         new Vector2(0.95244, -0.30472), //2
         new Vector2(-0.57998, 0.81463) //4
     ]
+
+    static doorFront = [
+        new Vector2(-0.5,0.5),
+        new Vector2(-0.4,0.5),
+        new Vector2(-0.4, -0.4),
+        new Vector2(0.4, -0.4),
+        new Vector2(0.4, 0.5),
+        new Vector2(0.5, 0.5),
+        new Vector2(0.5, -0.5),
+        new Vector2(-0.5, -0.5)
+    ]
 }
