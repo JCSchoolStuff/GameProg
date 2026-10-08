@@ -4,5 +4,6 @@ class MainGameObject extends GameObject{
         this.addComponent(new UpdateComponent())
         this.addComponent(new Polygon(), {fillStyle:"gold", points:Assets.star})
         this.addComponent(new Health(), {health:2})
+        //this.transform.scale = new Vector2(2,2)
     }
 }

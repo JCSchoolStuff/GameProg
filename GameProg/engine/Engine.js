@@ -12,6 +12,8 @@ class Engine {
         //track when keys are pressed and let go
         addEventListener("keydown", Input.keydown)
         addEventListener("keyup", Input.keyup)
+        addEventListener("mousedown", Input.mousedown)
+        addEventListener("mouseup", Input.mouseup)
 
         SceneManager.nextScene = nextScene
 
@@ -33,6 +35,7 @@ class Engine {
         Engine.draw()
 
         Time.update()
+        Input.update()
         
         //call gameloop again when browser asks
         requestAnimationFrame(Engine.gameLoop)

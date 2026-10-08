@@ -1,7 +1,7 @@
 class LaserController extends Component {
     update() {
         this.transform.position.y -= Time.deltaTime * 600
-        if (this.transform.position.y < 100)
+        if (this.transform.position.y < -300)
             this.gameObject.destroy()
 
         //collison check
