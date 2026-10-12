@@ -1,7 +1,7 @@
 class LevelController extends Component{
     start(){
         //additive load
-        SceneManager.loadScene(GenericScene, true)
+        //SceneManager.loadScene(GenericScene, true)
     }
 
     update(){

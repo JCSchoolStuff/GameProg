@@ -12,7 +12,7 @@ class DialogueHandler extends Component {
             let suspectPosition = suspect1.transform.position
             let distance = myPosition.minus(suspectPosition).magnitude
             if (distance < 40) {
-                if (Input.keysDown.includes("Space")) {
+                if (Input.keysDownThisFrame.includes("Space")) {
                     instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth)/2,600))
                     let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100,520))
                     dialogueGameObject.getComponent(TextLabel).fillStyle = "red"
@@ -25,7 +25,7 @@ class DialogueHandler extends Component {
             let suspectPosition = suspect2.transform.position
             let distance = myPosition.minus(suspectPosition).magnitude
             if (distance < 40) {
-                if (Input.keysDown.includes("Space")) {
+                if (Input.keysDownThisFrame.includes("Space")) {
                     instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth)/2,600))
                     let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100,520))
                     dialogueGameObject.getComponent(TextLabel).fillStyle = "green"
@@ -38,7 +38,7 @@ class DialogueHandler extends Component {
             let suspectPosition = suspect3.transform.position
             let distance = myPosition.minus(suspectPosition).magnitude
             if (distance < 40) {
-                if (Input.keysDown.includes("Space")) {
+                if (Input.keysDownThisFrame.includes("Space")) {
                     instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth)/2,600))
                     let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100,520))
                     dialogueGameObject.getComponent(TextLabel).fillStyle = "orange"
@@ -51,7 +51,7 @@ class DialogueHandler extends Component {
             let suspectPosition = suspect4.transform.position
             let distance = myPosition.minus(suspectPosition).magnitude
             if (distance < 40) {
-                if (Input.keysDown.includes("Space")) {
+                if (Input.keysDownThisFrame.includes("Space")) {
                     instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth)/2,600))
                     let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100,520))
                     dialogueGameObject.getComponent(TextLabel).fillStyle = "purple"
@@ -64,7 +64,7 @@ class DialogueHandler extends Component {
             let victimPosition = victim.transform.position
             let distance = myPosition.minus(victimPosition).magnitude
             if (distance < 40) {
-                if (Input.keysDown.includes("Space")) {
+                if (Input.keysDownThisFrame.includes("Space")) {
                     instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth)/2,600))
                     let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100,520))
                     dialogueGameObject.getComponent(TextLabel).text = "This is the victim, Sir Gil Roundington."
