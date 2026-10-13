@@ -9,6 +9,10 @@ class Input{
     static mouseButtonsDownThisFrame = []
     static mouseButtonsUpThisFrame = []
 
+    static mousePosition
+    static mousePositionLastFrame
+    static mouseDelta
+
     static mousedown(event){
         if(!Input.mouseButtonsDown.includes(event.button))
             Input.mouseButtonsDown.push(event.button)
@@ -19,6 +23,16 @@ class Input{
         let index = Input.mouseButtonsDown.indexOf(event.button)
         Input.mouseButtonsDown.splice(index,1)
         Input.mouseButtonsUpThisFrame.push(event.button)
+    }
+
+    static mousemove(event){
+        if(Input.mousePosition){
+            Input.mousePositionLastFrame = Input.mousePosition
+        }
+        Input.mousePosition = new Vector2(event.clientX, event.clientY)
+        if(Input.mousePositionLastFrame){
+            Input.mouseDelta = Input.mousePosition.minus(Input.mousePositionLastFrame)
+        }
     }
 
     //add keys to keysDown

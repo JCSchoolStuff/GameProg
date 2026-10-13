@@ -27,6 +27,7 @@ class MainScene extends Scene{
         this.instantiate(new ShortWallGameObject(), new Vector2(1625,-1974), Math.PI/2)
         this.instantiate(new ShortWallGameObject(), new Vector2(1625,-2822), Math.PI/2)
         this.instantiate(new WallGameObject(), new Vector2(1130,-3316))
+        this.instantiate(new FountainGameObject(), new Vector2(0,-2000))
 
 
         //gohn's room
