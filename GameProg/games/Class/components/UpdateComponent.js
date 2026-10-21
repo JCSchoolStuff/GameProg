@@ -27,5 +27,15 @@ class UpdateComponent extends Component {
             instantiate(new LaserGameObject(), this.transform.position.clone())
         }
         Camera.main.transform.position = this.transform.position.clone()
+        //Camera.main.transform.scale = new Vector2(.7,.7)
+        //Camera.main.transform.rotation = 1
+    }
+
+    onCollisionStay(other){
+        console.log(other)
+    }
+
+    onMouseOver(){
+        console.log("Mouse Over")
     }
 }
