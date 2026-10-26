@@ -8,6 +8,7 @@ class DialogueHandler extends Component {
         let suspect3 = GameObject.find("Gohn")
         let suspect4 = GameObject.find("Hex")
         let victim = GameObject.find("Victim")
+
         if (suspect1){
             let suspectPosition = suspect1.transform.position
             let distance = myPosition.minus(suspectPosition).magnitude
@@ -15,8 +16,8 @@ class DialogueHandler extends Component {
                 if (Input.keysDownThisFrame.includes("Space")) {
                     instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth)/2,600))
                     let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100,520))
-                    dialogueGameObject.getComponent(TextLabel).fillStyle = "red"
-                    dialogueGameObject.getComponent(TextLabel).text = "Hello there, Detective. I'm Equity Lateral, fiancee of the late Mr. Roundington."
+                    dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = "red"
+                    dialogueGameObject.getComponent(MultiLineTextLabel).text = "Oh, detective! Whatever am I to do? My darling Gil has perished! We were set to be married soon. How could such a tragedy happen?"
                     Globals.investigation ++
                 }
             }
@@ -28,8 +29,8 @@ class DialogueHandler extends Component {
                 if (Input.keysDownThisFrame.includes("Space")) {
                     instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth)/2,600))
                     let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100,520))
-                    dialogueGameObject.getComponent(TextLabel).fillStyle = "green"
-                    dialogueGameObject.getComponent(TextLabel).text = "Thank you ever so for coming, Detective. I was the deceased's attorney. Ulyssess Aire, Esquire."
+                    dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = "green"
+                    dialogueGameObject.getComponent(MultiLineTextLabel).text = "Thank you ever so for coming, Detective. I was the deceased's attorney. Ulyssess Aire, Esquire."
                     Globals.investigation ++
                 }
             }
@@ -41,8 +42,8 @@ class DialogueHandler extends Component {
                 if (Input.keysDownThisFrame.includes("Space")) {
                     instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth)/2,600))
                     let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100,520))
-                    dialogueGameObject.getComponent(TextLabel).fillStyle = "orange"
-                    dialogueGameObject.getComponent(TextLabel).text = "G-Graham... I promise it wasn't me. You trust me, right, bro?"
+                    dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = "orange"
+                    dialogueGameObject.getComponent(MultiLineTextLabel).text = "G-Graham... I promise it wasn't me. You trust me, right, bro?"
                     Globals.investigation ++
                 }
             }
@@ -54,8 +55,8 @@ class DialogueHandler extends Component {
                 if (Input.keysDownThisFrame.includes("Space")) {
                     instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth)/2,600))
                     let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100,520))
-                    dialogueGameObject.getComponent(TextLabel).fillStyle = "purple"
-                    dialogueGameObject.getComponent(TextLabel).text = "Yo yo yo! It's the life of the party, Hex A. Connel! ... wait, murder? Someone died?"
+                    dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = "purple"
+                    dialogueGameObject.getComponent(MultiLineTextLabel).text = "Yo yo yo! It's the life of the party, Hex A. Connel! ... wait, murder? Someone died?"
                     Globals.investigation ++
                 }
             }
@@ -67,7 +68,7 @@ class DialogueHandler extends Component {
                 if (Input.keysDownThisFrame.includes("Space")) {
                     instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth)/2,600))
                     let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100,520))
-                    dialogueGameObject.getComponent(TextLabel).text = "This is the victim, Sir Gil Roundington."
+                    dialogueGameObject.getComponent(MultiLineTextLabel).text = "This is the victim, Sir Gil Roundington."
                     Globals.investigation ++
                 }
             }

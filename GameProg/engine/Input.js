@@ -3,6 +3,7 @@ class Input{
     static keysDown = []
 
     static keysDownThisFrame = []
+    
     static keysUpThisFrame = []
 
     static mouseButtonsDown = []

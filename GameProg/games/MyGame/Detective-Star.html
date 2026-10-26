@@ -29,10 +29,10 @@
     <script src="../../engine/Components/TextLabel.js"></script>
     <script src="../../engine/Components/MultiLineTextLabel.js"></script>
     <script src="../../engine/Components/Camera.js"></script>
+    <script src="../../engine/Components/Collider.js"></script>
 
     <script src="./components/UpdateComponent.js"></script>
     <script src="./components/DialogueHandler.js"></script>
-    <script src="./components/TitleProgresser.js"></script>
     <script src="./components/LevelController.js"></script>
 
     <script src="./gameObjects/MainGameObject.js"></script>
@@ -49,7 +49,9 @@
     <script src="./gameObjects/LevelControllerGameObject.js"></script>
     <script src="./gameObjects/WallGameObject.js"></script>
     <script src="./gameObjects/ShortWallGameObject.js"></script>
+    <script src="./gameObjects/DoorWallGameObject.js"></script>
     <script src="./gameObjects/DetectorGameObject.js"></script>
+    <script src="./gameObjects/DoorGameObject.js"></script>
     <script src="./gameObjects/FountainGameObject.js"></script>
 
     <script src="./scenes/TitleScene.js"></script>
@@ -63,6 +65,32 @@
     <script>
         //start the game engine
         Engine.start(TitleScene, Settings)
+
+        //collision tests
+        let one = new GameObject()
+        one.addComponent(new Polygon(), {points:[
+            new Vector2(0,-1),
+            new Vector2(-1,1),
+            new Vector2(1,1)
+        ]})
+
+        let two = new GameObject()
+        two.addComponent(new Polygon(), {points:[
+            new Vector2(0,-1),
+            new Vector2(-1,1),
+            new Vector2(1,1)
+        ]})
+
+        console.assert(Collisions.isCollisionPointPolygon(new Vector2(0,0), one))
+        console.assert(Collisions.isCollisionPointPolygon(new Vector2(0,.9999), one))
+
+        console.assert(!Collisions.isCollisionPointPolygon(new Vector2(10000,10000), one))
+        console.assert(!Collisions.isCollisionPointPolygon(new Vector2(0,-1.1), one))
+        console.assert(!Collisions.isCollisionPointPolygon(new Vector2(0,-1.0001), one))
+
+        console.assert(Collisions.isCollisionPolygonPolygon(one, two))
+        two.transform.position = new Vector2(1000,400)
+        console.assert(!Collisions.isCollisionPolygonPolygon(one, two))
     </script>
 </body>
 

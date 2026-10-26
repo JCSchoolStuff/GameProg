@@ -32,24 +32,39 @@ class MainScene extends Scene{
 
         //gohn's room
         this.instantiate(new ShortWallGameObject(), new Vector2(-495,-1126), Math.PI/2)
-        this.instantiate(new WallGameObject(), new Vector2(-1130,-1480))
+        //door wall
+        this.instantiate(new DoorWallGameObject(), new Vector2(-1343,-1480))
+        this.instantiate(new DoorWallGameObject(), new Vector2(-777,-1480))
+        this.instantiate(new DoorGameObject(), new Vector2(-1060,-1480))
 
         //equity's room
         this.instantiate(new ShortWallGameObject(), new Vector2(-495,-2962), Math.PI/2)
-        this.instantiate(new WallGameObject(), new Vector2(-1130,-2608))
+        //door wall
+        this.instantiate(new DoorWallGameObject(), new Vector2(-1343,-2608))
+        this.instantiate(new DoorWallGameObject(), new Vector2(-777,-2608))
+        this.instantiate(new DoorGameObject(), new Vector2(-1060,-2608))
 
         //hex's room
         this.instantiate(new ShortWallGameObject(), new Vector2(495,-1126), Math.PI/2)
-        this.instantiate(new WallGameObject(), new Vector2(1130,-1480))
+        //door wall
+        this.instantiate(new DoorWallGameObject(), new Vector2(1343,-1480))
+        this.instantiate(new DoorWallGameObject(), new Vector2(777,-1480))
+        this.instantiate(new DoorGameObject(), new Vector2(1060,-1480))
 
         //ulysses' room
         this.instantiate(new ShortWallGameObject(), new Vector2(495,-2962), Math.PI/2)
-        this.instantiate(new WallGameObject(), new Vector2(1130,-2608))
+        //door wall
+        this.instantiate(new DoorWallGameObject(), new Vector2(1343,-2608))
+        this.instantiate(new DoorWallGameObject(), new Vector2(777,-2608))
+        this.instantiate(new DoorGameObject(), new Vector2(1060,-2608))
 
         //victim's room
         this.instantiate(new WallGameObject(), new Vector2(0,-4250))
         this.instantiate(new ShortWallGameObject(), new Vector2(-495,-3810), Math.PI/2)
         this.instantiate(new ShortWallGameObject(), new Vector2(495,-3810), Math.PI/2)
-        this.instantiate(new DetectorGameObject(), new Vector2(0,-3300))
+        //door wall
+        this.instantiate(new DoorWallGameObject(), new Vector2(-280,-3316))
+        this.instantiate(new DoorWallGameObject(), new Vector2(280,-3316))
+        this.instantiate(new DetectorGameObject(), new Vector2(0,-3316))
     }
 }
