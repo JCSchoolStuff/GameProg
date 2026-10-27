@@ -4,5 +4,6 @@ class EvidenceOpenGameObject extends GameObject{
         this.addComponent(new Polygon(), {fillStyle:"DarkSlateGray", points:Assets.square})
         this.transform.scale = new Vector2(100,100)
         this.addComponent(new EvidenceHandler())
+        this.addComponent(new Collider())
     }
 }
