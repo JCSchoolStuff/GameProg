@@ -9,7 +9,6 @@ class InvestigateScene extends Scene{
         this.instantiate(new VictimGameObject(), new Vector2(0,-3800))
         this.instantiate(new MainGameObject(), new Vector2(0,0))
         this.instantiate(new LevelControllerGameObject(), new Vector2(10,20))
-        this.instantiate(new EvidenceOpenGameObject(), new Vector2(100,200))
         //geometry
         
         //entry hall
