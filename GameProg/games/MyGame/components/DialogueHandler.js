@@ -3,6 +3,7 @@ class DialogueHandler extends Component {
         //collison check
         let myPosition = this.transform.position
         let suspects = GameObject.findGameObjectsWithTag("Suspect")
+        let investigate = GameObject.findGameObjectsWithTag("Investigate")
         // let suspect1 = GameObject.find("Equity")
         // let suspect2 = GameObject.find("Ulysses")
         // let suspect3 = GameObject.find("Gohn")
@@ -17,21 +18,22 @@ class DialogueHandler extends Component {
                 if (Input.keysDownThisFrame.includes("Space")) {
                     Globals.inDialogue = true
                 }
-                if (Globals.inDialogue) {
-                    let dialogueBox = instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth) / 2, 600))
-                    let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100, 520))
-                    for (let i = 0; i < suspect.dialogueArray.length; i++) {
-                        if (Input.keysDownThisFrame.includes("Space")) {
-                            dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = suspect.dialogueColorArray[i]
-                            dialogueGameObject.getComponent(MultiLineTextLabel).text = suspect.dialogueArray[i]
-                            dialogueState += 1
-                        }
-                    }
-                    dialogueBox.destroy()
-                    dialogueGameObject.destroy()
-                    Globals.inDialogue = false
-                }
             }
+            if (Globals.inDialogue) {
+                let dialogueBox = instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth) / 2, 600))
+                let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100, 520))
+                while (dialogueState < suspect.dialogueArray.length) {
+                    if (Input.keysDownThisFrame.includes("Space")) {
+                        dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = suspect.dialogueColorArray[dialogueState]
+                        dialogueGameObject.getComponent(MultiLineTextLabel).text = suspect.dialogueArray[dialogueState]
+                        dialogueState += 1
+                    }
+                }
+                dialogueBox.destroy()
+                dialogueGameObject.destroy()
+                Globals.inDialogue = false
+            }
+
         }
 
         // if (suspect1){

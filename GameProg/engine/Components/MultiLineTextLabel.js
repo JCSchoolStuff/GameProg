@@ -2,6 +2,8 @@ class MultiLineTextLabel extends Component{
     fillStyle = "black"
     text = "[BLANK]"
     font = "10px Arial" //Sizepx Font
+    textAlign = "left" //left, center, right
+    textBaseline = "alphabetic" //top, hanging, middle, alphabetic, ideographic, bottom
 
     maxWidth = 500
 
@@ -18,6 +20,8 @@ class MultiLineTextLabel extends Component{
         ctx.fillStyle = this.fillStyle
 
         ctx.font = this.font
+        ctx.textAlign = this.textAlign
+        ctx.textBaseline = this.textBaseline
         //draw text
 
         //measure

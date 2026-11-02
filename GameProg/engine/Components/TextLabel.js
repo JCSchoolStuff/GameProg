@@ -2,6 +2,8 @@ class TextLabel extends Component{
     fillStyle = "black"
     text = "[BLANK]"
     font = "10px Arial" //Sizepx Font
+    textAlign = "left" //left, center, right
+    textBaseline = "alphabetic" //top, hanging, middle, alphabetic, ideographic, bottom
     draw(ctx){
         //  let position = this.transform.position
         //signalling to context that drawing will happen
@@ -15,6 +17,8 @@ class TextLabel extends Component{
         ctx.fillStyle = this.fillStyle
 
         ctx.font = this.font
+        ctx.textAlign = this.textAlign
+        ctx.textBaseline = this.textBaseline
         //draw text
         ctx.fillText(this.text, 0, 0)
 
