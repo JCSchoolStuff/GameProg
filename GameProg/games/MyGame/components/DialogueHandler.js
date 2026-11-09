@@ -1,4 +1,5 @@
 class DialogueHandler extends Component {
+    dialogueState = 0
     update() {
         //collison check
         let myPosition = this.transform.position
@@ -9,31 +10,32 @@ class DialogueHandler extends Component {
         // let suspect3 = GameObject.find("Gohn")
         // let suspect4 = GameObject.find("Hex")
         // let victim = GameObject.find("Victim")
-        let dialogueState = 0
+        
 
         for (const suspect of suspects) {
             let suspectPosition = suspect.transform.position
             let distance = myPosition.minus(suspectPosition).magnitude
-            if (suspect.name == "Equity" && distance < 40) {
+            if (distance < 40) {
                 if (Input.keysDownThisFrame.includes("Space")) {
                     Globals.inDialogue = true
                 }
             }
-            if (Globals.inDialogue) {
+            while (Globals.inDialogue) {
                 let dialogueBox = instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth) / 2, 600))
                 let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100, 520))
-                while (dialogueState < suspect.dialogueArray.length) {
+                if (this.dialogueState < suspect.dialogueArray.length) {
                     if (Input.keysDownThisFrame.includes("Space")) {
-                        dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = suspect.dialogueColorArray[dialogueState]
-                        dialogueGameObject.getComponent(MultiLineTextLabel).text = suspect.dialogueArray[dialogueState]
-                        dialogueState += 1
+                        dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = suspect.dialogueColorArray[this.dialogueState]
+                        dialogueGameObject.getComponent(MultiLineTextLabel).text = suspect.dialogueArray[this.dialogueState]
+                        this.dialogueState += 1
                     }
+                } else {
+                    dialogueBox.destroy()
+                    dialogueGameObject.destroy()
+                    this.dialogueState = 0
+                    Globals.inDialogue = false
                 }
-                dialogueBox.destroy()
-                dialogueGameObject.destroy()
-                Globals.inDialogue = false
             }
-
         }
 
         // if (suspect1){
