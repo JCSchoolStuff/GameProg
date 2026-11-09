@@ -22,13 +22,10 @@ class DialogueHandler extends Component {
             if (Globals.inDialogue) {
                 let dialogueBox = instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth) / 2, 600))
                 let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100, 520))
-                while (dialogueState < suspect.dialogueArray.length) {
-                    if (Input.keysDownThisFrame.includes("Space")) {
-                        dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = suspect.dialogueColorArray[dialogueState]
-                        dialogueGameObject.getComponent(MultiLineTextLabel).text = suspect.dialogueArray[dialogueState]
-                        dialogueState += 1
-                    }
+                if (Input.keysDownThisFrame.includes("Space")) {
+                    dialogueGameObject.updateDialogue(suspect, dialogueState)
                 }
+
                 dialogueBox.destroy()
                 dialogueGameObject.destroy()
                 Globals.inDialogue = false
