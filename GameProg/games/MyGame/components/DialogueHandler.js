@@ -10,7 +10,7 @@ class DialogueHandler extends Component {
         // let suspect3 = GameObject.find("Gohn")
         // let suspect4 = GameObject.find("Hex")
         // let victim = GameObject.find("Victim")
-        
+
 
         for (const suspect of suspects) {
             let suspectPosition = suspect.transform.position
@@ -23,18 +23,22 @@ class DialogueHandler extends Component {
             while (Globals.inDialogue) {
                 let dialogueBox = instantiate(new DialogueBoxGameObject(), new Vector2((window.innerWidth) / 2, 600))
                 let dialogueGameObject = instantiate(new DialogueGameObject(), new Vector2(100, 520))
-                if (this.dialogueState < suspect.dialogueArray.length) {
-                    if (Input.keysDownThisFrame.includes("Space")) {
-                        dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = suspect.dialogueColorArray[this.dialogueState]
-                        dialogueGameObject.getComponent(MultiLineTextLabel).text = suspect.dialogueArray[this.dialogueState]
-                        this.dialogueState += 1
-                    }
-                } else {
+                 
+                console.log(this.dialogueState)
+                if (this.dialogueState >= suspect.dialogueArray.length) {
+                    console.log("destroy")
                     dialogueBox.destroy()
                     dialogueGameObject.destroy()
                     this.dialogueState = 0
                     Globals.inDialogue = false
                 }
+                else if (Input.keysDownThisFrame.includes("Space")) {
+                    dialogueGameObject.getComponent(MultiLineTextLabel).fillStyle = suspect.dialogueColorArray[this.dialogueState]
+                    console.log(suspect.dialogueArray[this.dialogueState])
+                    dialogueGameObject.getComponent(MultiLineTextLabel).text = suspect.dialogueArray[this.dialogueState]
+                    this.dialogueState += 1
+                }
+                
             }
         }
 
