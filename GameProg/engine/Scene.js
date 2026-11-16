@@ -61,6 +61,11 @@ class Scene {
             for (let j = i + 1; j < collidable.length; j++) {
                 const one = collidable[i]
                 const two = collidable[j]
+
+                //Continue if they're not in collision layers list
+                if(Engine.collisionLayers.length > 0 && !Engine.collisionLayers.includes(pair=>(pair[0] == one.layer && pair[1] == two.layer)||(pair[0] == two.layer && pair[1] == one.layer))){
+                    continue
+                }
                 if (!one.getComponent(RigidBody) && !two.getComponent(RigidBody)) {
                     continue
                 }

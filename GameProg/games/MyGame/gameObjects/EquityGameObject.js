@@ -12,7 +12,9 @@ class EquityGameObject extends GameObject{
         this.dialogue3 = "Sorry, I understand... allow me a moment to collect myself."
         this.dialogue4 = "Well, I'd entered Gil's room to dust off that family heirloom he keeps. He'd been doing a lot of work for the gathering, so I wanted to help out."
         this.dialogue5 = "When I finished with that, I left the room. That was when I bumped into Gohn, standing right outside. He invited me to talk in his room."
-        this.dialogueArray = [this.dialogue1, this.dialogue2, this.dialogue3, this.dialogue4, this.dialogue5]
-        this.dialogueColorArray = [this.suspectColor, this.detectiveColor, this.suspectColor, this.suspectColor, this.suspectColor]
+        this.dialogue6 = "What was he doing outside of your room? And what did you two talk about?"
+        this.dialogue7 = "I'm quite unsure why he was there in the first place, but he merely wished to know more about me."
+        this.dialogueArray = [this.dialogue1, this.dialogue2, this.dialogue3, this.dialogue4, this.dialogue5, this.dialogue6, this.dialogue7, " "]
+        this.dialogueColorArray = [this.suspectColor, this.detectiveColor, this.suspectColor, this.suspectColor, this.suspectColor, this.detectiveColor, this.suspectColor, "black"]
     }
 }

@@ -5,12 +5,16 @@ class Engine {
 
     static layers = ["default", "UI"]
 
+    static collisionLayers = []
+
     static aspectRatio
 
     static cameraWidthInWorldSpace
 
     static letterBoxingWidth = 0
     static letterBoxingHeight = 0
+
+    static lastTimeStep
 
     static start(nextScene, settings) {
         Engine.canvas = document.querySelector("#canv")
@@ -30,6 +34,9 @@ class Engine {
             Engine.layers = settings.layers
             Engine.aspectRatio = settings.aspectRatio
             Engine.cameraWidthInWorldSpace = settings.cameraWidthInWorldSpace
+            if(settings.collisionLayers){
+                Engine.collisionLayers = settings.collisionLayers
+            }
         }
 
         //request browser to call gameLoop
@@ -37,7 +44,16 @@ class Engine {
     }
 
     //refresh the screen
-    static gameLoop() {
+    static gameLoop(timestamp) {
+        if(!Engine.lastTimeStep){
+            Engine.lastTimeStep = timestamp
+        }
+        else{
+            const diffInMilliseconds = timestamp - Engine.lastTimeStep
+            const diffInSeconds = diffInMilliseconds/1000
+            Time.deltaTime = Math.min(diffInSeconds, 1/60)
+            Engine.lastTimeStep = timestamp
+        }
         //update scene manager
         SceneManager.update()
 

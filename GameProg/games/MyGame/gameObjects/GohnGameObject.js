@@ -7,7 +7,7 @@ class GohnGameObject extends GameObject{
         this.detectiveColor = "gold"
         this.dialogue1 = "... Graham??? You're the detective on this case??"
         this.dialogue2 = "Gohn... you didn't do anything, did you?"
-        this.dialogueArray = [this.dialogue1, this.dialogue2]
-        this.dialogueColorArray = [this.suspectColor, this.detectiveColor]
+        this.dialogueArray = [this.dialogue1, this.dialogue2, " "]
+        this.dialogueColorArray = [this.suspectColor, this.detectiveColor, "black"]
     }
 }
