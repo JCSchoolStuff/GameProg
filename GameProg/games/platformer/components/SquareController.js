@@ -24,6 +24,7 @@ class SquareController extends Component {
       this.rigidBody.velocity.y = -100
       this.lastJumpTime = Time.time
     }
+    // @ts-ignore
     if (Input.keysDown.includes("Space") && Time.time - this.lastJumpTime < .3) {
       this.rigidBody.velocity.y = -100
     }

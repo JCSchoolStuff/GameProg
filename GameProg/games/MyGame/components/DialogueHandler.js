@@ -5,17 +5,13 @@ class DialogueHandler extends Component {
         let myPosition = this.transform.position
         let suspects = GameObject.findGameObjectsWithTag("Suspect")
         let investigate = GameObject.findGameObjectsWithTag("Investigate")
-        // let suspect1 = GameObject.find("Equity")
-        // let suspect2 = GameObject.find("Ulysses")
-        // let suspect3 = GameObject.find("Gohn")
-        // let suspect4 = GameObject.find("Hex")
-        // let victim = GameObject.find("Victim")
 
         if(Globals.inDialogue){
                 if (this.dialogueState >= this.suspectInDialogue.dialogueArray.length) {
                     this.dialogueBox.destroy()
                     this.dialogueGameObject.destroy()
                     this.dialogueState = 0
+                    this.suspectInDialogue.talkedTo = true
                     Globals.inDialogue = false
                 }
                 else if (Input.keysDownThisFrame.includes("Space")) {

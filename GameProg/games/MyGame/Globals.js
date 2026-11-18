@@ -4,4 +4,5 @@ class Globals{
     static stage = 0
     static evidenceOn = -1
     static inDialogue = false
+    static inInvestigation = false
 }

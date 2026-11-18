@@ -3,6 +3,7 @@ class EquityGameObject extends GameObject{
         super("Equity", ["Suspect"], "midground")
         this.addComponent(new Polygon(), {fillStyle:"red", points:Assets.triangle})
         this.transform.scale = new Vector2(50,50)
+        this.talkedTo = false
 
         //dialogue
         this.suspectColor = "red"
@@ -14,7 +15,16 @@ class EquityGameObject extends GameObject{
         this.dialogue5 = "When I finished with that, I left the room. That was when I bumped into Gohn, standing right outside. He invited me to talk in his room."
         this.dialogue6 = "What was he doing outside of your room? And what did you two talk about?"
         this.dialogue7 = "I'm quite unsure why he was there in the first place, but he merely wished to know more about me."
-        this.dialogueArray = [this.dialogue1, this.dialogue2, this.dialogue3, this.dialogue4, this.dialogue5, this.dialogue6, this.dialogue7, " "]
-        this.dialogueColorArray = [this.suspectColor, this.detectiveColor, this.suspectColor, this.suspectColor, this.suspectColor, this.detectiveColor, this.suspectColor, "black"]
+        this.dialogue8 = "I see... and how long did you two talk for?"
+        this.dialogue9 = "Oh, I'd say we were there until a quarter to 10. That's around the time I usually start my nighttime routine, so I excused myself to my room"
+        this.dialogue10 = "And did anything else happen the rest of the night? Did you see or hear anything?"
+        this.dialogue11 = "I'm afraid not. I was just about to get into bed when I heard Hex's cries... and from there..."
+        this.dialogue12 = "I understand. THank you for your time, ma'am. Rest be assured, I will find out who did this."
+        this.dialogue13 = "Thank you, detective... I think I've told you all I can."
+        this.dialogue14 = "Right, I'll get back to my investigation."
+        this.dialogueArray = [this.dialogue1, this.dialogue2, this.dialogue3, this.dialogue4, this.dialogue5, this.dialogue6, this.dialogue7, 
+            this.dialogue8, this.dialogue9, this.dialogue10, this.dialogue11, this.dialogue12, this.dialogue13, this.dialogue14, "end"]
+        this.dialogueColorArray = [this.suspectColor, this.detectiveColor, this.suspectColor, this.suspectColor, this.suspectColor, this.detectiveColor, this.suspectColor,
+            this.detectiveColor, this.suspectColor, this.detectiveColor, this.suspectColor, this.detectiveColor, this.suspectColor, this.detectiveColor, "black"]
     }
 }
