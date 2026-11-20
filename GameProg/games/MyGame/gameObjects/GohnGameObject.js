@@ -9,7 +9,7 @@ class GohnGameObject extends GameObject{
         this.dialogue2 = "Gohn... you didn't do anything, did you?"
         this.dialogue3 = "Wh-what? You know I could never... KILL someone!"
         this.dialogue4 = "... only thing I know is that anyone is capable of anything."
-        this.dialogueArray = [this.dialogue1, this.dialogue2, " "]
-        this.dialogueColorArray = [this.suspectColor, this.detectiveColor, "black"]
+        this.dialogueArray = [this.dialogue1, this.dialogue2, this.dialogue3, this.dialogue4, " "]
+        this.dialogueColorArray = [this.suspectColor, this.detectiveColor, this.suspectColor, this.detectiveColor, "black"]
     }
 }
