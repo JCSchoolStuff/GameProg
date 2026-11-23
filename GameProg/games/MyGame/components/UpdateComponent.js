@@ -1,6 +1,6 @@
 class UpdateComponent extends Component {
     position
-    speed = 180
+    speed = 250
 
     fixedUpdate() {
         if (!Globals.inDialogue) {

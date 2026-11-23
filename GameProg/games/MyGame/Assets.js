@@ -1,3 +1,4 @@
+// @ts-ignore
 class Assets{
     static triangle = [
         new Vector2(0,-1),

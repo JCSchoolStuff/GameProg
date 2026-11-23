@@ -4,7 +4,6 @@ class DialogueHandler extends Component {
         //collison check
         let myPosition = this.transform.position
         let suspects = GameObject.findGameObjectsWithTag("Suspect")
-        let investigate = GameObject.findGameObjectsWithTag("Investigate")
 
         if(Globals.inDialogue){
                 if (this.dialogueState >= this.suspectInDialogue.dialogueArray.length) {
